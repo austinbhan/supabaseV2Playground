@@ -1,5 +1,6 @@
 import {
   BrowserRouter as Router,
+  Routes, Route
 } from 'react-router-dom';
 import AuthPage from './components/AuthPage';
 import ListPage from './components/ListPage/ListPage';
@@ -9,9 +10,14 @@ export default function App() {
   return(
     <Router>
       <h1>Supabase Auth and CRUD List Exercise</h1>
-      <AuthPage /> 
-      <ListPage />
-      <CreatePage />
+      <Routes>
+        <Route path="/" 
+          element={<AuthPage />}/>
+        <Route path="listPage"
+          element={<ListPage />}/>
+        <Route path="createPage"
+          element={<CreatePage />}/>
+      </Routes>
     </Router>
   );
 }
