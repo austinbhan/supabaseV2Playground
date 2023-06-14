@@ -7,6 +7,7 @@ import ListPage from './components/ListPage/ListPage';
 import CreatePage from './components/CreatePage';
 
 export default function App() {
+
   return(
     <Router>
       <h1>Supabase Auth and CRUD List Exercise</h1>
