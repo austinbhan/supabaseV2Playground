@@ -1,19 +1,23 @@
 // The Entire List Page That Calls the Loop
-import { ListData } from './ListData';
 import List from './List';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { getBooks } from '../../services/fetch-utils';
 
 export default function ListPage() {
+  const [bookData, setBookData] = useState([]);
 
   useEffect(() => {
-    getBooks();
-  });
-  
+    async function doFetch() {
+      const bookData = await getBooks();
+      setBookData(bookData);
+    }
+    doFetch();
+  }, []);
+
   return (
     <div>
       <h2>This is the List Page</h2>
-      <List ListData={ListData}/>
+      <List ListData={bookData}/>
     </div>
   );
 }
