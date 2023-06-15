@@ -11,3 +11,7 @@ export async function getBooks() {
   return data;
 }
 
+export async function getBook(id) {
+  const { data } = await supabase.from('books').select().match({ id });
+  return data;
+}

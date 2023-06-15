@@ -12,8 +12,8 @@ DONE 4c: Install Supabase library
 DONE 4d: Create Fetch Utils to Render All Supabase Data instead of List Data
 DONE 4e: Replace ListData with FetchUtils
 
-5a: Create Creation Form
-5b: Creation Form needs URL link from List Page
+DONE 5a: Create Creation Form
+DONE 5b: Creation Form needs URL link from List Page
 5c: Create Fetch Utils to Add Supabase Data
 5d: Create Form Submission Function that calls Fetch Utils
 5e: Verify form works with Supabase table
@@ -22,8 +22,10 @@ DONE 4e: Replace ListData with FetchUtils
 6b: Create Fetch Utils to Delete Supabase Data
 
 7a: Create Edit Form of and Individual Book Data
-7b: Upon form editing, render new data on backend
-7c: Make form edit return to the list page
+7b: The edit form should have an individual entry of the specific id
+7c: That individual entry should be called from a single fetch entry
+7d: Upon form editing, render new data on backend
+7e: Make form edit return to the list page
 
 8a: Create User Form will store user input
 8b: Create fetch-utils add user form
