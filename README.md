@@ -15,9 +15,10 @@ DONE 4e: Replace ListData with FetchUtils
 DONE 5a: Create Creation Form
 DONE 5b: Creation Form needs URL link from List Page
 DONE 5c: Create submission function that will console log
-5d: Create Fetch Utils to Add Supabase Data
-5e: Create Form Submission Function that calls Fetch Utils
-5f: Verify form works with Supabase table
+DONE 5d: Create Fetch Utils to Add Supabase Data
+DONE 5e: Create Form Submission Function that calls Fetch Utils
+DONE 5f: Verify form works with Supabase table
+5g: Form will remove text entries OR redirect to list page
 
 6a: Add Delete Button for Each List Entry, make it an individual button per entry?
 6b: Create Fetch Utils to Delete Supabase Data
