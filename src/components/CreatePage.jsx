@@ -1,11 +1,39 @@
+import { useState } from 'react';
+
 export default function CreatePage() {
+  const [bookTitle, setBookTitle] = useState('');
+  const [bookAuthor, setBookAuthor] = useState('');
+  const [bookYear, setBookYear] = useState('');
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const submission = [];
+    // Will create a local array of form contents
+    submission.push(bookTitle, bookAuthor, bookYear); 
+  }
+
   return (
     <div>
       <h2>This is the Create Page</h2>
-      <form>
-          Book Title: <input type="text" placeholder="Book Title"></input>
-          Book Author: <input type="text" placeholder="Book Author"></input>
-          Book Year: <input type="text" placeholder="Book Year"></input>
+      <form onSubmit={handleSubmit}>
+          Book Title:  
+        <input type="text" 
+          placeholder="Book Title" 
+          value={bookTitle} 
+          onChange={e => setBookTitle(e.target.value)}></input> 
+          
+          Book Author: 
+        <input type="text" 
+          placeholder="Book Author" 
+          value={bookAuthor} 
+          onChange={e => setBookAuthor(e.target.value)}></input>
+
+          Book Year: 
+        <input type="text" 
+          placeholder="Book Year" 
+          value={bookYear} 
+          onChange={e => setBookYear(e.target.value)}></input>
+
         <button>Submit</button>
       </form>
     </div>
