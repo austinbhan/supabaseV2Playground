@@ -14,7 +14,7 @@ DONE 4e: Replace ListData with FetchUtils
 
 DONE 5a: Create Creation Form
 DONE 5b: Creation Form needs URL link from List Page
-5c: Create submission function that will console log
+DONE 5c: Create submission function that will console log
 5d: Create Fetch Utils to Add Supabase Data
 5e: Create Form Submission Function that calls Fetch Utils
 5f: Verify form works with Supabase table

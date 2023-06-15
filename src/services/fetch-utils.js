@@ -15,3 +15,10 @@ export async function getBook(id) {
   const { data } = await supabase.from('books').select().match({ id });
   return data;
 }
+
+export async function insertBook(title, author, year) {
+  const { error } = await supabase.from('books')
+    .insert({ bookTitle: title, bookAuthor: author, bookYear: year });
+  
+  return error;
+}

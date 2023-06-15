@@ -1,20 +1,22 @@
 import { useState } from 'react';
+import { insertBook } from '../services/fetch-utils';
 
 export default function CreatePage() {
+  const [title, setTitle] = useState('Insert your Book Here');
   const [bookTitle, setBookTitle] = useState('');
   const [bookAuthor, setBookAuthor] = useState('');
   const [bookYear, setBookYear] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();
-    const submission = [];
-    // Will create a local array of form contents
-    submission.push(bookTitle, bookAuthor, bookYear); 
+    insertBook(bookTitle, bookAuthor, bookYear);
+    setTitle('Thank you for your submission!');
   }
 
   return (
     <div>
       <h2>This is the Create Page</h2>
+      <h3>{title}</h3>
       <form onSubmit={handleSubmit}>
           Book Title:  
         <input type="text" 
