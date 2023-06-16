@@ -6,12 +6,13 @@ export default function CreatePage() {
   const [bookAuthor, setBookAuthor] = useState('');
   const [bookYear, setBookYear] = useState('');
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    insertBook(bookTitle, bookAuthor, bookYear);
+    await insertBook(bookTitle, bookAuthor, bookYear);
     setBookTitle('');
     setBookAuthor('');
     setBookYear('');
+    window.location.replace('/listPage');
   }
 
   return (
@@ -35,7 +36,6 @@ export default function CreatePage() {
           placeholder="Book Year"
           value={bookYear} 
           onChange={e => setBookYear(e.target.value)}></input>
-
         <button>Submit</button>
       </form>
     </div>

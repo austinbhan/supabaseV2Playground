@@ -5,9 +5,10 @@ import { useState } from 'react';
 export default function ListComponent({ id, bookTitle, bookAuthor, bookYear }) {
   const [remove, setRemove] = useState('');
 
-  function handleDelete(e) {
+  async function handleDelete(e) {
     e.preventDefault();
-    deleteBook(remove);
+    await deleteBook(remove);
+    window.location.replace('/listPage');
   }
 
   return (

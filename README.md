@@ -23,7 +23,7 @@ DONE 5g: Form will remove text entries OR redirect to list page
 DONE 6a: Add Delete Button for Each List Entry, make it an individual button per entry?
 DONE 6b: Create Fetch Utils to Delete Supabase Data
 DONE 6c: Link fetch-utils function so that button deletes data
-6d: Need redirect functinality for creation and deletion form
+DONE 6d: Need redirect functinality for creation and deletion form
 
 7a: Create Edit Form of and Individual Book Data
 7b: The edit form should have an individual entry of the specific id
