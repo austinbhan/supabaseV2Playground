@@ -25,5 +25,4 @@ export async function insertBook(title, author, year) {
 export async function deleteBook(id) {
   const { error } = await supabase.from('books').delete().match({ id });
   return error;
-
 }
