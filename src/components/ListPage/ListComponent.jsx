@@ -1,4 +1,5 @@
 // A Singular List Component
+import { deleteBook } from '../../services/fetch-utils';
 
 export default function ListComponent({ id, bookTitle, bookAuthor, bookYear }) {
   return (
@@ -9,6 +10,7 @@ export default function ListComponent({ id, bookTitle, bookAuthor, bookYear }) {
         <li>{bookAuthor}</li>
         <li>{bookYear}</li>
       </ul>
+      <button>Delete {bookTitle}</button>
     </div>
   );
 }

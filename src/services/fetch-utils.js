@@ -19,6 +19,11 @@ export async function getBook(id) {
 export async function insertBook(title, author, year) {
   const { error } = await supabase.from('books')
     .insert({ bookTitle: title, bookAuthor: author, bookYear: year });
-  
   return error;
+}
+
+export async function deleteBook(id) {
+  const { error } = await supabase.from('books').delete().match({ id });
+  return error;
+
 }

@@ -18,10 +18,11 @@ DONE 5c: Create submission function that will console log
 DONE 5d: Create Fetch Utils to Add Supabase Data
 DONE 5e: Create Form Submission Function that calls Fetch Utils
 DONE 5f: Verify form works with Supabase table
-5g: Form will remove text entries OR redirect to list page
+DONE 5g: Form will remove text entries OR redirect to list page
 
-6a: Add Delete Button for Each List Entry, make it an individual button per entry?
-6b: Create Fetch Utils to Delete Supabase Data
+DONE 6a: Add Delete Button for Each List Entry, make it an individual button per entry?
+DONE 6b: Create Fetch Utils to Delete Supabase Data
+6c: Link fetch-utils function so that button deletes data
 
 7a: Create Edit Form of and Individual Book Data
 7b: The edit form should have an individual entry of the specific id
