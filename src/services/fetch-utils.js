@@ -31,7 +31,17 @@ export async function updateBook({ id, title, author, year }) {
   const { error } = await supabase.from('books')
     .update({ bookTitle: title, bookAuthor: author, bookYear: year })
     .match({ id });
-    
   return error;
+}
+
+export async function createUser(userEmail, userPassword) {
+  const { data } = await supabase.auth.signUp({
+    email: userEmail,
+    password: userPassword,
+  });
+  return data;
+}
+
+export async function loginUser() {
 
 }

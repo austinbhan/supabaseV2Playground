@@ -35,8 +35,8 @@ DONE 7f: Form will update the value of the rendered page
 DONE 7g: Upon form editing, render new data on backend
 DONE 7h: Make form edit return to the list page
 
-8a: Create User Form will store user input
-8b: Create fetch-utils add user form
+DONE 8a: Create User Form will store user input
+DONE 8b: Create fetch-utils add user form
 8c: Create User data will invoke the fetch-utils data
 8d: Login form will check for user table
 8e: If login credentials exists, then redirect to form
