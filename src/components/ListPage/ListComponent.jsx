@@ -28,7 +28,7 @@ export default function ListComponent({ id, bookTitle, bookAuthor, bookYear }) {
           onClick={e => setRemove(e.target.value)}>
             Delete {bookTitle}</button>
       </form>
-      <button onClick={handleEditLink}>Edit Entry</button>
+      <button onClick={handleEditLink}>Edit {bookTitle}</button>
     </div>
   );
 }

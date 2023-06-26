@@ -19,7 +19,7 @@ export default function App() {
           element={<ListPage />}/>
         <Route path="createPage"
           element={<CreatePage />}/>
-        <Route path="editPage"
+        <Route path="editPage/:id"
           element={<EditPage />}/>
       </Routes>
     </Router>
