@@ -12,7 +12,7 @@ export default function ListComponent({ id, bookTitle, bookAuthor, bookYear }) {
   }
 
   function handleEditLink() {
-    window.location.replace('/editPage');
+    window.location.replace(`/editPage/${id}`);
   }
 
   return (

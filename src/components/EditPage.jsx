@@ -3,15 +3,18 @@ import { useParams } from 'react-router-dom';
 import { getBook } from '../services/fetch-utils';
 
 export default function EditPage() {
-  const [book, setBook] = useState({});
+  const [placeHolder, setPlaceHolder] = useState({});
+  // const [newBook, setNewBook] = useState([]);
   const params = useParams();
 
   useEffect(() => {
     async function doFetch() {
       const data = await getBook(params.id);
-      setBook(data);
+      setPlaceHolder(data);
     }
     doFetch();
+
+    
   }, [params.id]);
 
   return (
@@ -20,15 +23,15 @@ export default function EditPage() {
       <form>
           Book Title:  
         <input type="text" 
-          placeholder={book.bookTitle}
+          placeholder={placeHolder.bookTitle}
         ></input> 
           Book Author: 
         <input type="text" 
-          placeholder={book.bookAuthor}
+          placeholder={placeHolder.bookAuthor}
         ></input>
           Book Year: 
         <input type="text" 
-          placeholder={book.bookYear}
+          placeholder={placeHolder.bookYear}
         ></input>
         <button>Submit</button>
       </form>

@@ -25,11 +25,15 @@ DONE 6b: Create Fetch Utils to Delete Supabase Data
 DONE 6c: Link fetch-utils function so that button deletes data
 DONE 6d: Need redirect functinality for creation and deletion form
 
-7a: Create Edit Form of an Individual Book Data
-7b: The edit form should have an individual entry of the specific id
-7c: That individual entry should be called from a single fetch entry
-7d: Upon form editing, render new data on backend
-7e: Make form edit return to the list page
+DONE 7a: Create Edit Form of an Individual Book Data
+DONE 7b: The edit form should have an individual entry of the specific id
+DONE 7c: That individual entry should be called from a single fetch entry
+DONE 7d: Create Edit fetch-utils
+DONE 7e: Link from Create Page should procedurally move to unique edit page
+7e: Form submission function for edit page
+7f: Form will update the value of the rendered page
+7g: Upon form editing, render new data on backend
+7h: Make form edit return to the list page
 
 8a: Create User Form will store user input
 8b: Create fetch-utils add user form
