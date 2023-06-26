@@ -11,6 +11,10 @@ export default function ListComponent({ id, bookTitle, bookAuthor, bookYear }) {
     window.location.replace('/listPage');
   }
 
+  function handleEditLink() {
+    window.location.replace('/editPage');
+  }
+
   return (
     <div>
       <form onSubmit={handleDelete}>
@@ -24,6 +28,7 @@ export default function ListComponent({ id, bookTitle, bookAuthor, bookYear }) {
           onClick={e => setRemove(e.target.value)}>
             Delete {bookTitle}</button>
       </form>
+      <button onClick={handleEditLink}>Edit Entry</button>
     </div>
   );
 }
