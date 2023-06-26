@@ -30,7 +30,7 @@ export async function deleteBook(id) {
 export async function updateBook({ id, title, author, year }) {
   const { error } = await supabase.from('books')
     .update({ bookTitle: title, bookAuthor: author, bookYear: year })
-    .eq(id);
+    .match({ id });
     
   return error;
 
