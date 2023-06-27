@@ -1,16 +1,23 @@
 import { createUser, loginUser } from '../services/fetch-utils';
 import { useState } from 'react';
 
-export default function AuthPage() {
+export default function AuthPage({ setUser }) {
   const [newUser, setNewUser] = useState('');
   const [newPassword, setNewPassword] = useState('');
 
   const [existingUser, setExistingUser] = useState('');
   const [existingPassword, setExistingPassword] = useState('');
 
+  const [error, setError] = useState('');
+
   async function handleCreate(e) {
     e.preventDefault();
-    await createUser(newUser, newPassword);
+    try {
+      const user = await createUser(newUser, newPassword);
+      setUser(user);// WORK FROM HERE
+    } catch(e) {
+      setError(e.message);
+    }
   }
 
   async function handleLogin(e) {
@@ -22,6 +29,7 @@ export default function AuthPage() {
     <div>
       <h2>This is the Auth Page</h2>
       <div>
+        <h2>{error}</h2>
         <form onSubmit={handleCreate}>
           <h2>Create New User</h2>
           Email: <input type="text" 

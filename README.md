@@ -38,9 +38,15 @@ DONE 7h: Make form edit return to the list page
 DONE 8a: Create User Form will store user input
 DONE 8b: Create fetch-utils add user form
 DONE 8c: Create User data will invoke the fetch-utils data
-8d: Login form will check for user table
-8e: If login credentials exists, then redirect to form
-8f: If login invalid, don't change page and return error notice
+
+WORK FROM LINE 17 OF AUTHPAGE 
+
+8d: Create Logout that will remove session cookie
+DONE 8e: Enable RLS for registered users
+8d: Create User and Login should redirect to list page
+8e: Login should not redirect if user does not exist
+8f: Login should give user error if user does not exist
+8g: Data should not be accessible if login credentials not verified
 
 9a: Add entry will include author of the user
 9b: Make user data visible unique to user
