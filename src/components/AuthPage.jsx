@@ -1,20 +1,28 @@
-import { createUser } from '../services/fetch-utils';
+import { createUser, loginUser } from '../services/fetch-utils';
 import { useState } from 'react';
 
 export default function AuthPage() {
   const [newUser, setNewUser] = useState('');
   const [newPassword, setNewPassword] = useState('');
 
-  async function handleNewUser(e) {
+  const [existingUser, setExistingUser] = useState('');
+  const [existingPassword, setExistingPassword] = useState('');
+
+  async function handleCreate(e) {
     e.preventDefault();
-    createUser(newUser, newPassword);
+    await createUser(newUser, newPassword);
+  }
+
+  async function handleLogin(e) {
+    e.preventDefault();
+    await loginUser(existingUser, existingPassword);
   }
 
   return (
     <div>
       <h2>This is the Auth Page</h2>
       <div>
-        <form onSubmit={handleNewUser}>
+        <form onSubmit={handleCreate}>
           <h2>Create New User</h2>
           Email: <input type="text" 
             placeholder="New Email"
@@ -26,10 +34,16 @@ export default function AuthPage() {
             onChange={e => setNewPassword(e.target.value)} />
           <button>New User</button>
         </form>
-        <form>
+        <form onSubmit={handleLogin}>
           <h2>Login Existing User</h2>
-          Email: <input type="text" placeholder="New Email" />
-          Password: <input type="password" placeholder="Password" />
+          Email: <input type="text" 
+            placeholder="New Email" 
+            value={existingUser}
+            onChange={e => setExistingUser(e.target.value)}/>
+          Password: <input type="password" 
+            placeholder="Password" 
+            value={existingPassword}
+            onChange={e => setExistingPassword(e.target.value)}/>
           <button>Login User</button>
         </form>
       </div>

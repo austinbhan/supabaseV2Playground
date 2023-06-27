@@ -34,14 +34,20 @@ export async function updateBook({ id, title, author, year }) {
   return error;
 }
 
-export async function createUser(userEmail, userPassword) {
+export async function createUser(newEmail, newPassword) {
   const { data } = await supabase.auth.signUp({
-    email: userEmail,
-    password: userPassword,
+    email: newEmail,
+    password: newPassword,
   });
+  console.log(data);
   return data;
 }
 
-export async function loginUser() {
-
+export async function loginUser(existingEmail, existingPassword) {
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email: existingEmail,
+    password: existingPassword,
+  });
+  console.log(error);
+  return data;
 }

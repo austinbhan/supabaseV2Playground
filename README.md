@@ -37,7 +37,7 @@ DONE 7h: Make form edit return to the list page
 
 DONE 8a: Create User Form will store user input
 DONE 8b: Create fetch-utils add user form
-8c: Create User data will invoke the fetch-utils data
+DONE 8c: Create User data will invoke the fetch-utils data
 8d: Login form will check for user table
 8e: If login credentials exists, then redirect to form
 8f: If login invalid, don't change page and return error notice
