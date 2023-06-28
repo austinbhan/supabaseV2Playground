@@ -51,3 +51,9 @@ export async function loginUser(existingEmail, existingPassword) {
   console.log(error);
   return data;
 }
+
+export async function logOut() {
+  const { error } = await supabase.auth.signOut();
+  console.log(error);
+  return error;
+}

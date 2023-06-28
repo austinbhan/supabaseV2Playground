@@ -1,7 +1,7 @@
 import { createUser, loginUser } from '../services/fetch-utils';
 import { useState } from 'react';
 
-export default function AuthPage({ setUser }) {
+export default function AuthPage() {
   const [newUser, setNewUser] = useState('');
   const [newPassword, setNewPassword] = useState('');
 
@@ -14,7 +14,8 @@ export default function AuthPage({ setUser }) {
     e.preventDefault();
     try {
       const user = await createUser(newUser, newPassword);
-      setUser(user);// WORK FROM HERE
+      // setUser(user);// WORK FROM HERE
+      console.log(user);
     } catch(e) {
       setError(e.message);
     }
