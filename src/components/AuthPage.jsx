@@ -14,7 +14,6 @@ export default function AuthPage() {
     e.preventDefault();
     try {
       const user = await createUser(newUser, newPassword);
-      // setUser(user);// WORK FROM HERE
       console.log(user);
     } catch(e) {
       setError(e.message);

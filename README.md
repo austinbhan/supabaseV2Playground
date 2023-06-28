@@ -38,11 +38,17 @@ DONE 7h: Make form edit return to the list page
 DONE 8a: Create User Form will store user input
 DONE 8b: Create fetch-utils add user form
 DONE 8c: Create User data will invoke the fetch-utils data
-
-WORK FROM LINE 17 OF AUTHPAGE 
-
-8d: Create Logout that will remove session cookie
+DONE 8d: Create Logout that will remove session cookie
 DONE 8e: Enable RLS for registered users
+
+WRITE OBJECTIVES HERE FOR AUTH VERIFICATION
+1: Be on App.js
+2: Function that fetches auth information
+3: useState stores auth information
+4: If auth information does not exist
+5: Redirect from list page to auth page 
+
+
 8d: Create User and Login should redirect to list page
 8e: Login should not redirect if user does not exist
 8f: Login should give user error if user does not exist
