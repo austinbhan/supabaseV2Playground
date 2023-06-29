@@ -41,18 +41,10 @@ DONE 8c: Create User data will invoke the fetch-utils data
 DONE 8d: Create Logout that will remove session cookie
 DONE 8e: Enable RLS for registered users
 
-WRITE OBJECTIVES HERE FOR AUTH VERIFICATION
-1: Be on App.js
-2: Function that fetches auth information
-3: useState stores auth information
-4: If auth information does not exist
-5: Redirect from list page to auth page 
-
-
-8d: Create User and Login should redirect to list page
-8e: Login should not redirect if user does not exist
-8f: Login should give user error if user does not exist
-8g: Data should not be accessible if login credentials not verified
+DONE 8d: Create User and Login should redirect to list page
+DONE 8e: Login should not redirect if user does not exist
+DONE 8f: Data should not be accessible if login credentials not verified
+8g: Login should give user error if user does not exist
 
 9a: Add entry will include author of the user
 9b: Make user data visible unique to user

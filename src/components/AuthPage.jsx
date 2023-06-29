@@ -4,17 +4,15 @@ import { useState } from 'react';
 export default function AuthPage() {
   const [newUser, setNewUser] = useState('');
   const [newPassword, setNewPassword] = useState('');
-
   const [existingUser, setExistingUser] = useState('');
   const [existingPassword, setExistingPassword] = useState('');
-
   const [error, setError] = useState('');
 
   async function handleCreate(e) {
     e.preventDefault();
     try {
-      const user = await createUser(newUser, newPassword);
-      console.log(user);
+      await createUser(newUser, newPassword);
+      window.location.href = '/listPage';
     } catch(e) {
       setError(e.message);
     }
@@ -23,7 +21,8 @@ export default function AuthPage() {
   async function handleLogin(e) {
     e.preventDefault();
     await loginUser(existingUser, existingPassword);
-  }
+    window.location.href = '/listPage';
+  } // HOW TO GIVE ERROR MESSAGE IF LOGIN INCORRECT
 
   return (
     <div>
