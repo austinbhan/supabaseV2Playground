@@ -59,5 +59,5 @@ export async function logOut() {
 
 export async function checkUser() {
   const { data: { user } } = await supabase.auth.getUser();
-  return { data: { user } };
+  return user;
 }

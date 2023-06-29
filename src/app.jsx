@@ -7,20 +7,17 @@ import CreatePage from './components/CreatePage';
 import EditPage from './components/EditPage';
 import ListPage from './components/ListPage/ListPage';
 import { checkUser } from './services/fetch-utils';
-import { useState, useEffect } from 'react';
 
 export default function App() {
-  const [user, setUser] = useState({});
+  const user = checkUser();
   
-  useEffect(() => {
-    async function handleUser() {
-      await setUser(checkUser);
-    }
-    handleUser();
-    
-  }, []);
-  // How do I retrieve an explicit user value?
-  console.log(user);
+  function userData(user) {
+    const userInfo = Promise.resolve(user);
+    userInfo.then((user) => {
+      console.log(user);
+    });
+  } userData(user);
+
 
   return(
     <Router>
