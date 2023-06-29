@@ -11,7 +11,6 @@ import { useState, useEffect } from 'react';
 
 export default function App() {
   const [user, setUser] = useState(null);
-
   const userFetch = checkUser();
 
   useEffect(() => {
@@ -19,16 +18,9 @@ export default function App() {
       const userInfo = Promise.resolve(user);
       userInfo.then((user) => {
         setUser(user);
-        function notNull(user) {
-          if (user != null) {
-            console.log('true');
-          } else console.log('false');
-        } notNull(user);
       });
     } userData(userFetch);
   }, []);
-
-  console.log('line 31', user);
 
   return(
     <Router>
@@ -37,7 +29,12 @@ export default function App() {
         <Route path="authPage" 
           element={<AuthPage />} />
         <Route path="listPage"
-          element={<ListPage />}/>
+          element={
+            !user 
+              ? <AuthPage />
+              : <ListPage />
+          }
+        />
         <Route path="createPage"
           element={<CreatePage />}/>
         <Route path="editPage/:id"
