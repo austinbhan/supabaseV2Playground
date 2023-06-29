@@ -39,7 +39,6 @@ export async function createUser(newEmail, newPassword) {
     email: newEmail,
     password: newPassword,
   });
-  console.log(data);
   return data;
 }
 
