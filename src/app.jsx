@@ -26,7 +26,7 @@ export default function App() {
     <Router>
       <h1>Supabase Auth and CRUD List Exercise</h1>
       <Routes>
-        <Route path="authPage" 
+        <Route path="/" 
           element={<AuthPage />} />
         <Route path="listPage"
           element={

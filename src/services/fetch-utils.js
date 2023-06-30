@@ -7,39 +7,40 @@ export const supabase = createClient(
 );
 
 export async function getBooks() {
-  const { data } = await supabase.from('books').select();
-  return data;
+  const { data, error } = await supabase.from('books').select();
+  return { data, error };
 }
 
 export async function getBook(id) {
-  const { data } = await supabase.from('books').select().match({ id }).single();
-  return data;
+  const { data, error } = await supabase
+    .from('books').select().match({ id }).single();
+  return { data, error };
 }
 
 export async function insertBook(title, author, year) {
-  const { error } = await supabase.from('books')
+  const { data, error } = await supabase.from('books')
     .insert({ bookTitle: title, bookAuthor: author, bookYear: year });
-  return error;
+  return { data, error } ;
 }
 
 export async function deleteBook(id) {
-  const { error } = await supabase.from('books').delete().match({ id });
-  return error;
+  const { data, error } = await supabase.from('books').delete().match({ id });
+  return { data, error };
 }
 
 export async function updateBook({ id, title, author, year }) {
-  const { error } = await supabase.from('books')
+  const { data, error } = await supabase.from('books')
     .update({ bookTitle: title, bookAuthor: author, bookYear: year })
     .match({ id });
-  return error;
+  return { data, error };
 }
 
 export async function createUser(newEmail, newPassword) {
-  const { data } = await supabase.auth.signUp({
+  const { data, error } = await supabase.auth.signUp({
     email: newEmail,
     password: newPassword,
   });
-  return data;
+  return { data, error };
 }
 
 export async function loginUser(existingEmail, existingPassword) {
@@ -47,8 +48,7 @@ export async function loginUser(existingEmail, existingPassword) {
     email: existingEmail,
     password: existingPassword,
   });
-  console.log(error);
-  return data;
+  return { data, error };
 }
 
 export async function logOut() {
