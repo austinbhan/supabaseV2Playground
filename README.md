@@ -48,9 +48,17 @@ DONE 8f: Data should not be accessible if login credentials not verified
 
 -PLAYGROUND-
 The Goal
-a: user clicks login form with bad credentials
-b: loginUser sees no user exists
-c: form will either redirect, or stay then
+a: On the auth page
+b: On user submission of login 
+c: The function will run which will
+d: Get the login credentials
+e: if login credentials are null
+f: Change the usestate value of the error message 
+g: from blank to false
+h: and stay on the page
+i: If the user credentials return a value
+j: The redirect to listPage
+
 
 9a: Add entry will include author of the user
 9b: Make user data visible unique to user
