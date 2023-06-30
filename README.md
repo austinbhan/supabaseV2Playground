@@ -46,6 +46,12 @@ DONE 8e: Login should not redirect if user does not exist
 DONE 8f: Data should not be accessible if login credentials not verified
 8g: Login should give user error if user does not exist
 
+-PLAYGROUND-
+The Goal
+a: user clicks login form with bad credentials
+b: loginUser sees no user exists
+c: form will either redirect, or stay then
+
 9a: Add entry will include author of the user
 9b: Make user data visible unique to user
 8c: Check book table that will reflect data from all users.

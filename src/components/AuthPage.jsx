@@ -1,34 +1,43 @@
 import { createUser, loginUser } from '../services/fetch-utils';
 import { useState } from 'react';
 
-export default function AuthPage() {
+export default function AuthPage({ errorMsg }) {
   const [newUser, setNewUser] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [existingUser, setExistingUser] = useState('');
   const [existingPassword, setExistingPassword] = useState('');
   const [error, setError] = useState('');
+  const [user, setUser] = useState('');
 
+
+  
   async function handleCreate(e) {
     e.preventDefault();
     try {
-      await createUser(newUser, newPassword);
+      const user = await createUser(newUser, newPassword);
       window.location.href = '/listPage';
+      setUser(user);
     } catch(e) {
       setError(e.message);
     }
   }
-
+  
   async function handleLogin(e) {
     e.preventDefault();
-    await loginUser(existingUser, existingPassword);
-    window.location.href = '/listPage';
-  } // HOW TO GIVE ERROR MESSAGE IF LOGIN INCORRECT
+    try {
+      const user = await loginUser(existingUser, existingPassword);
+      window.location.href = '/listPage';
+      setUser(user);
+    } catch(e) {
+      setError(e.message);
+    }
+  } 
 
   return (
     <div>
       <h2>This is the Auth Page</h2>
+      <h4>{errorMsg}</h4>
       <div>
-        <h2>{error}</h2>
         <form onSubmit={handleCreate}>
           <h2>Create New User</h2>
           Email: <input type="text" 

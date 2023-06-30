@@ -27,11 +27,11 @@ export default function App() {
       <h1>Supabase Auth and CRUD List Exercise</h1>
       <Routes>
         <Route path="/" 
-          element={<AuthPage />} />
+          element={<AuthPage />} /> 
         <Route path="listPage"
           element={
             !user 
-              ? <AuthPage />
+              ? <AuthPage /> 
               : <ListPage />
           }
         />
