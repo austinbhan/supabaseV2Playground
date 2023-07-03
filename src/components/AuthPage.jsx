@@ -1,5 +1,5 @@
 import { createUser, loginUser } from '../services/fetch-utils';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function AuthPage() {
   const [newUser, setNewUser] = useState('');
@@ -8,15 +8,6 @@ export default function AuthPage() {
   const [existingPassword, setExistingPassword] = useState('');
   const [error, setError] = useState('');
   const [user, setUser] = useState('');
-
-  useEffect(() => {
-    function errorMsg() {
-      if (!user) {
-        setError('Create an account');
-      } else return;
-    }
-    errorMsg();
-  }, []);
 
   async function handleCreate(e) {
     e.preventDefault();
@@ -43,7 +34,7 @@ export default function AuthPage() {
   return (
     <div>
       <h2>This is the Auth Page</h2>
-      <h4>{error}</h4>
+      <h4>Create an Account</h4>
       <div>
         <form onSubmit={handleCreate}>
           <h2>Create New User</h2>
