@@ -31,6 +31,8 @@ export default function AuthPage() {
     }
   } 
 
+  console.log('Ignore these', error, user);
+
   return (
     <div>
       <h2>This is the Auth Page</h2>

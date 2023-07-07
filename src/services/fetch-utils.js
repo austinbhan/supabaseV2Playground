@@ -16,9 +16,12 @@ export async function getBook(id) {
   return data;
 }
 
-export async function insertBook(title, author, year) {
+export async function insertBook(title, author, year, id) {
   const { error } = await supabase.from('books')
-    .insert({ bookTitle: title, bookAuthor: author, bookYear: year });
+    .insert({ bookTitle: title, 
+      bookAuthor: author, 
+      bookYear: year,
+      user_id: id });
   return error;
 }
 
@@ -43,11 +46,11 @@ export async function createUser(newEmail, newPassword) {
 }
 
 export async function loginUser(existingEmail, existingPassword) {
-  const { data, error } = await supabase.auth.signInWithPassword({
+  const { data } = await supabase.auth.signInWithPassword({
     email: existingEmail,
     password: existingPassword,
   });
-  console.log(error);
+
   return data;
 }
 

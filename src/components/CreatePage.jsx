@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { insertBook } from '../services/fetch-utils';
+import { insertBook, checkUser } from '../services/fetch-utils';
 
 export default function CreatePage() {
   const [bookTitle, setBookTitle] = useState('');
@@ -7,8 +7,10 @@ export default function CreatePage() {
   const [bookYear, setBookYear] = useState('');
 
   async function handleSubmit(e) {
+    const user = await checkUser();
+    console.log(user);
     e.preventDefault();
-    await insertBook(bookTitle, bookAuthor, bookYear);
+    await insertBook(bookTitle, bookAuthor, bookYear, user.id);
     setBookTitle('');
     setBookAuthor('');
     setBookYear('');

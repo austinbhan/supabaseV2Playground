@@ -46,7 +46,7 @@ DONE 8e: Login should not redirect if user does not exist
 DONE 8f: Data should not be accessible if login credentials not verified
 8g: Login should give user error if user does not exist
 
--PLAYGROUND-
+-PLAYGROUND, FOR LATER-
 The Goal
 a: On the auth page
 b: On user submission of login 
@@ -59,7 +59,15 @@ h: and stay on the page
 i: If the user credentials return a value
 j: The redirect to listPage
 
+-GOAL, for add book to include the user author-
+9a: Create new column for books
+9b: Books should link to user table
+9c: Upon entry of book by user, upload to table with author included
+9d: Author should only be visible on table. 
+THOUGHTS
+1: Shouldn't table data upload the user hash browser-side? 
 
-9a: Add entry will include author of the user
-9b: Make user data visible unique to user
-8c: Check book table that will reflect data from all users.
+-WHEN THAT IS DONE
+
+9e: Make book entries visible only for the author.
+Therefore entires by other authors should not be visible
