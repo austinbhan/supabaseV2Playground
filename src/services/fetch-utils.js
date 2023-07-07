@@ -8,6 +8,7 @@ export const supabase = createClient(
 
 export async function getBooks() {
   const { data } = await supabase.from('books').select();
+  console.log(data);
   return data;
 }
 
