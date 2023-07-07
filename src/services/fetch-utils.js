@@ -16,12 +16,12 @@ export async function getBook(id) {
   return data;
 }
 
-export async function insertBook(title, author, year, id) {
+export async function insertBook(title, author, year) {
   const { error } = await supabase.from('books')
     .insert({ bookTitle: title, 
       bookAuthor: author, 
       bookYear: year,
-      user_id: id });
+    });
   return error;
 }
 

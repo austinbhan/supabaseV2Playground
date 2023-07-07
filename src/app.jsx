@@ -21,6 +21,8 @@ export default function App() {
       });
     } userData(userFetch);
   }, []);
+  
+  console.log(user);
 
   return(
     <Router>
