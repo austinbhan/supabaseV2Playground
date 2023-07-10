@@ -44,30 +44,9 @@ DONE 8e: Enable RLS for registered users
 DONE 8d: Create User and Login should redirect to list page
 DONE 8e: Login should not redirect if user does not exist
 DONE 8f: Data should not be accessible if login credentials not verified
-8g: Login should give user error if user does not exist
+LATER 8g: Login should give user error if user does not exist
 
--PLAYGROUND, FOR LATER-
-The Goal
-a: On the auth page
-b: On user submission of login 
-c: The function will run which will
-d: Get the login credentials
-e: if login credentials are null
-f: Change the usestate value of the error message 
-g: from blank to false
-h: and stay on the page
-i: If the user credentials return a value
-j: The redirect to listPage
-
--GOAL, for add book to include the user author-
-9a: Create new column for books
-9b: Books should link to user table
-9c: Upon entry of book by user, upload to table with author included
-9d: Author should only be visible on table. 
-THOUGHTS
-1: Shouldn't table data upload the user hash browser-side? 
-
--WHEN THAT IS DONE
-
-9e: Make book entries visible only for the author.
-Therefore entires by other authors should not be visible
+9a: User creates data that includes user_id credentials
+9b: Create TWO PAGES
+9c: A page with all user data, and their author/email
+9d: A page dedicated to solely the user's creations
