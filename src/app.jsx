@@ -6,6 +6,8 @@ import AuthPage from './components/AuthPage';
 import CreatePage from './components/CreatePage';
 import EditPage from './components/EditPage';
 import ListPage from './components/ListPage/ListPage';
+import PersonalList from './components/PersonalList/PersonalList';
+
 import { checkUser } from './services/fetch-utils';
 import { useState, useEffect } from 'react';
 
@@ -35,6 +37,8 @@ export default function App() {
               : <ListPage />
           }
         />
+        <Route path="personalList" 
+          element={<PersonalList />}/>
         <Route path="createPage"
           element={<CreatePage />}/>
         <Route path="editPage/:id"

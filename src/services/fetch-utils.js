@@ -12,6 +12,14 @@ export async function getBooks() {
   return data;
 }
 
+export async function getPersonalBooks(user_id) {
+  const { data, error } = await supabase.from('books')
+    .select()
+    .match({ user_id });
+  console.log(data, error);
+  return data;
+}
+
 export async function getBook(id) {
   const { data } = await supabase.from('books').select().match({ id }).single();
   return data;
@@ -63,4 +71,9 @@ export async function logOut() {
 export async function checkUser() {
   const { data: { user } } = await supabase.auth.getUser();
   return user;
+}
+
+export async function checkUserId() {
+  const { data: { user } } = await supabase.auth.getUser();
+  return user.id;
 }

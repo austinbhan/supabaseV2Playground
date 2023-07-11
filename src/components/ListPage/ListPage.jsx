@@ -25,7 +25,15 @@ export default function ListPage() {
       <div>
         <h2>This is the List Page</h2>
         <List ListData={bookData}/>
-        <Link to="/createPage">Create Page</Link>
+        <ul>
+
+          <li>
+            <Link to="/createPage">Create Page</Link>
+          </li>
+          <li>
+            <Link to="/personalList">My Personal List</Link>
+          </li>
+        </ul>
       </div>
       <button onClick={handleLogout}>Log Out</button>
     </>
