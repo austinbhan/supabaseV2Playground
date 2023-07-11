@@ -47,9 +47,12 @@ DONE 8f: Data should not be accessible if login credentials not verified
 LATER 8g: Login should give user error if user does not exist
 
 DONE 9a: User creates data that includes user_id credentials
-9b: Create TWO PAGES
-9c: A page with all user data, and their author/email
-9d: A page dedicated to solely the user's creations
+DONE 9b: Create TWO PAGES
+DONE 9c: A page with all user data, and their author/email
+DONE 9d: A page dedicated to solely the user's creations
+9e: Personal page includes template that will be looped in PersonalList
+9f: Data from getPersonalBooks will be pushed into the loop
+
 
 LIST OF BUGS
 1: Create User should redirect to list page

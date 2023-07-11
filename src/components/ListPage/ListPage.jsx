@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 export default function ListPage() {
   const [bookData, setBookData] = useState([]);
-  console.log('line 9', bookData);
 
   useEffect(() => {
     async function doFetch() {

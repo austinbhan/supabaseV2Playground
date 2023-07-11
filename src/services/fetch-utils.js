@@ -8,15 +8,13 @@ export const supabase = createClient(
 
 export async function getBooks() {
   const { data } = await supabase.from('books').select();
-  console.log(data);
   return data;
 }
 
 export async function getPersonalBooks(user_id) {
-  const { data, error } = await supabase.from('books')
+  const { data } = await supabase.from('books')
     .select()
     .match({ user_id });
-  console.log(data, error);
   return data;
 }
 

@@ -5,22 +5,28 @@ import { useEffect, useState } from 'react';
 export default function PersonalList() {
 
   const [userId, setUserId] = useState('');
+  const [books, setBooks] = useState('');
+
 
   useEffect(() => {
-
-    
     async function checkUserCredential() {
       const id = await checkUserId();
       setUserId(id);
     } checkUserCredential();
+
+    async function doFetch() {
+      const data = await getPersonalBooks(userId); 
+      // Above returns null. If userId is passed manually as string, works.
+      setBooks(data);
+    } doFetch();
+    
   }, []);
 
-  console.log(getPersonalBooks(userId)); // Correctly renders data
+  console.log(userId);
 
 
   return (
     <div>
-      <h2>This is the Personal List Page</h2>
     </div>
   );
 }
