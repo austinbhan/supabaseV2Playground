@@ -13,7 +13,7 @@ export async function getBooks() {
 
 export async function getPersonalBooks(user_id) {
   const { data } = await supabase.from('books')
-    .select()
+    .select() 
     .match({ user_id });
   return data;
 }

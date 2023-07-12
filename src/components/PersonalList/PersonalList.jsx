@@ -5,24 +5,34 @@ import { useEffect, useState } from 'react';
 export default function PersonalList() {
 
   const [userId, setUserId] = useState('');
-  const [books, setBooks] = useState('');
-
-
+  const [books, setBooks] = useState([]);
+  
+  async function checkUserCredential() {
+    const id = await checkUserId();
+    setUserId(id);
+  } 
+  
+  async function getStuff() {
+    const bookData = await getPersonalBooks(userId);
+    setBooks(bookData); 
+  }  
+  
   useEffect(() => {
-    async function checkUserCredential() {
-      const id = await checkUserId();
-      setUserId(id);
-    } checkUserCredential();
+    checkUserCredential();
+    if (userId !== '') {
+      getStuff();
+    }
+  }, [userId]);
+  
+  console.log(books);
 
-    async function doFetch() {
-      const data = await getPersonalBooks(userId); 
-      // Above returns null. If userId is passed manually as string, works.
-      setBooks(data);
-    } doFetch();
-    
-  }, []);
+  
+  
+  // IDEAS
+  // If outside useEffect, will fetch data, but in infinite loops
+  // If inside useEffect, will stop on first attempt
 
-  console.log(userId);
+  // if books != null, stop 
 
 
   return (
