@@ -1,5 +1,6 @@
 import { checkUserId, getPersonalBooks } from '../../services/fetch-utils';
 import { useEffect, useState } from 'react';
+import PList from './PList';
 
 // The Personal List that only shows personal entries
 export default function PersonalList() {
@@ -23,20 +24,12 @@ export default function PersonalList() {
       getStuff();
     }
   }, [userId]);
-  
+
+
   console.log(books);
-
-  
-  
-  // IDEAS
-  // If outside useEffect, will fetch data, but in infinite loops
-  // If inside useEffect, will stop on first attempt
-
-  // if books != null, stop 
-
-
   return (
     <div>
+      <PList books={books} />
     </div>
   );
 }
