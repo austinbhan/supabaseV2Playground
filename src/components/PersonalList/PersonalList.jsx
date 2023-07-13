@@ -25,8 +25,6 @@ export default function PersonalList() {
     }
   }, [userId]);
 
-
-  console.log(books);
   return (
     <div>
       <PList books={books} />

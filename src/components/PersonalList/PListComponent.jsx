@@ -4,9 +4,11 @@ export default function PersonaListComponent({
   bookYear }) {
   return (
     <div>
-      <p>{bookTitle}</p>
-      <p>{bookAuthor}</p>
-      <p>{bookYear}</p>
+      <ul>
+        <li>{bookTitle}</li>
+        <li>{bookAuthor}</li>
+        <li>{bookYear}</li>
+      </ul>
     </div>
   );
 }

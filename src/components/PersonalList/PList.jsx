@@ -3,7 +3,7 @@ import PersonaListComponent from './PListComponent';
 export default function PList({ books }) {
   return (
     <div>
-      <h4>This is the list</h4>
+      <h4>Personal List</h4>
       {
         books.map((book, i) => (
           <PersonaListComponent
