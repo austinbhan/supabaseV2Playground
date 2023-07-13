@@ -10,7 +10,6 @@ export default function ListComponent({ id, bookTitle, bookAuthor, bookYear }) {
         <li>{bookAuthor}</li>
         <li>{bookYear}</li>
       </ul>
-       
     </div>
   );
 }
