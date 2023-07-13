@@ -6,8 +6,11 @@ export default function AuthPage() {
   const [newPassword, setNewPassword] = useState('');
   const [existingUser, setExistingUser] = useState('');
   const [existingPassword, setExistingPassword] = useState('');
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState('');
+  // eslint-disable-next-line no-unused-vars
   const [user, setUser] = useState('');
+
 
   async function handleCreate(e) {
     e.preventDefault();
@@ -30,8 +33,6 @@ export default function AuthPage() {
       setError(e.message);
     }
   } 
-
-  console.log('Ignore these', error, user);
 
   return (
     <div>

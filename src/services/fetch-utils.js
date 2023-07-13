@@ -11,17 +11,24 @@ export async function getBooks() {
   return data;
 }
 
+export async function getPersonalBooks(user_id) {
+  const { data } = await supabase.from('books')
+    .select() 
+    .match({ user_id });
+  return data;
+}
+
 export async function getBook(id) {
   const { data } = await supabase.from('books').select().match({ id }).single();
   return data;
 }
 
-export async function insertBook(title, author, year, id) {
+export async function insertBook(title, author, year) {
   const { error } = await supabase.from('books')
     .insert({ bookTitle: title, 
       bookAuthor: author, 
       bookYear: year,
-      user_id: id });
+    });
   return error;
 }
 
@@ -62,4 +69,9 @@ export async function logOut() {
 export async function checkUser() {
   const { data: { user } } = await supabase.auth.getUser();
   return user;
+}
+
+export async function checkUserId() {
+  const { data: { user } } = await supabase.auth.getUser();
+  return user.id;
 }
